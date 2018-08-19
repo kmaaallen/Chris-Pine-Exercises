@@ -1,0 +1,30 @@
+https://pine.fm/LearnToProgram/chap_05.html
+    
+   1) Write an Angry Boss program. It should rudely ask what you want. Whatever you answer, the Angry Boss should yell it back to you, 
+   and then fire you. For example, if you type in I want a raise., it should yell back WHADDAYA MEAN "I WANT A RAISE."?!?  YOU'RE FIRED!!
+   
+      puts "What do YOU want?"
+      answer = gets.chomp.upcase
+      puts "WHADDAYA MEAN \"#{answer}.\"?!? YOU'RE FIRED!!"
+
+    2) Write a program which will display a Table of Contents so that it looks like this:
+
+                    Table of Contents                
+                                                     
+    Chapter 1:  Numbers                        page 1
+    Chapter 2:  Letters                       page 72
+    Chapter 3:  Variables                    page 118
+    
+    solution: 
+    #set line width
+    line_width = 50
+    #center title
+    puts "Table of Contents".center line_width
+    #puts empty line between title and contents
+    puts " "
+    puts "Chapter 1:  Numbers".ljust(line_width/2) + "Page 1".rjust(line_width/2)
+    puts "Chapter 2:  Letters".ljust(line_width/2) + "Page 72".rjust(line_width/2)
+    puts "Chapter 3:  Variables".ljust(line_width/2) + "Page 118".rjust(line_width/2)
+    
+    
+
