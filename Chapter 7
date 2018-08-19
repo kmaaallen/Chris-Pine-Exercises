@@ -1,0 +1,12 @@
+https://pine.fm/LearnToProgram/chap_07.html
+
+1) write a program which asks us to type in as many words as we want (one word per line, continuing until we just press Enter
+on an empty line), and which then repeats the words back to us in alphabetical order.
+    
+2) Write the program we talked about at the very beginning of this chapter.
+    Hint: There's a lovely array method which will give you a sorted version of an array: sort. Use it!
+    
+3)Try writing the above program without using the sort method. 
+    
+4) Rewrite your Table of Contents program. Start the program with an array holding all of the information for your Table of Contents 
+(chapter names, page numbers, etc.). Then print out the information from the array in a beautifully formatted Table of Contents.
