@@ -1,0 +1,93 @@
+https://pine.fm/LearnToProgram/chap_06.html
+
+   1) "99 bottles of beer on the wall..." Write a program which prints out the lyrics to that beloved classic, that field-trip favorite
+   : "99 Bottles of Beer on the Wall."
+   #use a loop method
+   number = 99
+    while number > 0 do
+    puts "#{number} bottles of beer on the wall, #{number} bottles of beer. Take one down and pass it around, #{(number) -1} bottles of beer on the wall."
+    number = number - 1
+   end
+   
+   2) Write a Deaf Grandma program. Whatever you say to grandma (whatever you type in), she should respond with 
+   HUH?!  SPEAK UP, SONNY!, unless you shout it (type in all capitals). If you shout, she can hear you (or at least she thinks so) 
+   and yells back, NO, NOT SINCE 1938! 
+      #STAGE ONE - basic program - have to put NOT upcase, if put == downcase - will think capitalised words are correct for response
+             
+             puts "Ask Grandma a question"
+              says = gets.chomp
+              if says != says.upcase
+              puts "HUH?!  SPEAK UP, SONNY!"
+            else
+              puts "NO, NOT SINCE 1938!"
+             end
+   
+   To make your program really believable, have grandma shout a different year each time; 
+   maybe any year at random between 1930 and 1950. 
+   #STAGE 2 - Change year  to a random number between 1930 and 1950. 
+              
+              puts "Ask Grandma a question"
+              says = gets.chomp
+              if says == says.downcase
+              puts "HUH?!  SPEAK UP, SONNY!"
+              else
+              puts "NO, NOT SINCE #{rand(1930..1950)}!"
+              end
+   
+   You can't stop talking to grandma until you shout BYE. #have used an until loop
+  
+      puts "Ask grandma something"
+      says = gets.chomp
+      until says == "BYE" do
+      if says != says.upcase
+      puts "HUH?!  SPEAK UP, SONNY!"
+      else
+      puts "NO, NOT SINCE #{rand(1930..1950)}!"
+      end
+      puts "Ask grandma something"
+      says = gets.chomp
+      end
+      #gradnma says goodbye
+      puts "GOODBYE DEARIE"
+    
+   3) Extend your Deaf Grandma program: What if grandma doesn't want you to leave? When you shout BYE, she could pretend not to hear you. 
+   Change your previous program so that you have to shout BYE three times in a row. Make sure to test your program: if you shout BYE 
+   three times, but not in a row, you should still be talking to grandma.
+   #Cannot just change "BYE" to "BYE BYE BYE" b/c more than three BYEs in a row will continue grandma loop.
+   
+   puts "Ask grandma something"
+   says = gets.chomp
+   bye = "BYE BYE BYE"
+   until says.include? bye do
+   if says != says.upcase
+   puts "HUH?!  SPEAK UP, SONNY!"
+   else
+   puts "NO, NOT SINCE #{rand(1930..1950)}!"
+   end
+   puts "Ask grandma something"
+   says = gets.chomp
+   end
+  puts "GOODBYE DEARIE"
+   
+   4)Leap Years. Write a program which will ask for a starting year and an ending year, and then puts all of the leap years between
+   them (and including them, if they are also leap years). Leap years are years divisible by four (like 1984 and 2004). However,
+   years divisible by 100 are not leap years (such as 1800 and 1900) unless they are divisible by 400 (like 1600 and 2000, which
+   were in fact leap years). 
+   #remember to put input to integers
+   
+   puts "Please enter a starting year: "
+   starting_year = gets.chomp.to_i
+   puts "Please enter an ending year: "
+   ending_year = gets.chomp.to_i
+
+  year_array = (starting_year .. ending_year).to_a
+  year_array.delete_if {|x| (x%4 != 0) || ((x% 100 == 0) && (x% 400 !=0))}
+   
+   
+   
+   
+   
+   
+   
+   
+   
