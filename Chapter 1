@@ -1,0 +1,15 @@
+ #https://pine.fm/LearnToProgram/chap_01.html
+ Write a program which tells you:
+
+    1) how many hours are in a year?
+        puts 24*365
+    2) how many minutes are in a decade?
+        puts 60*24*365*10
+    3) how many seconds old are you?
+        puts 60*60*24*365*25
+    4) how many chocolates do you hope to eat in your life?
+          #chocolates I hope to eat per day*1 year*average female lifespan ~ 83
+          puts 1*365*83
+  
+    5) If I am 1298 million seconds old, how old am I?
+          puts 1298000000/60/60/24/365        
