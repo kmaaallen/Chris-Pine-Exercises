@@ -1,0 +1,112 @@
+https://pine.fm/LearnToProgram/chap_08.html 
+ 
+1) Expand upon englishNumber. First, put in thousands. So it should return 'one thousand' instead of 'ten hundred' and 'ten thousand' 
+instead of 'one hundred hundred'. Expand upon englishNumber some more. Now put in millions, so you get 'one million' instead of 
+'one thousand thousand'. 
+Then try adding billions and trillions. How high can you go?
+
+CHRIS PINE'S ENGLISH NUMBER PROGRAM ORIGINAL: from https://pine.fm/LearnToProgram/chap_08.html 
+def englishNumber number
+  if number < 0 
+    return 'Please enter a number that isn\'t negative.'
+  end
+  if number == 0
+    return 'zero'
+  end
+
+  numString = ''  
+
+  onesPlace = ['one',     'two',       'three',    'four',     'five',
+               'six',     'seven',     'eight',    'nine']
+  tensPlace = ['ten',     'twenty',    'thirty',   'forty',    'fifty',
+               'sixty',   'seventy',   'eighty',   'ninety']
+  teenagers = ['eleven',  'twelve',    'thirteen', 'fourteen', 'fifteen',
+               'sixteen', 'seventeen', 'eighteen', 'nineteen']
+ 
+******INSERTED CODE FOR MILLIONS,THOUSANDS IN THIS SECTION******
+#NEED TO INSERT 'MILLIONS' CODE HERE BEFORE 1000'S CODE
+left = number
+write = left/1000000
+left = left - write*1000000
+if write > 0
+millions = englishNumber write
+numString = numString + millions + ' million'
+
+if left > 0
+
+numString = numString + ' '
+end
+end
+
+#NEED TO INSERT 'THOUSANDS' CODE HERE BEFORE 100'S CODE
+write = left/1000
+left = left - write*1000
+if write > 0
+thousands = englishNumber write
+numString = numString + thousands + ' thousand'
+
+if left > 0
+
+numString = numString + ' '
+end
+end
+
+********************************************************
+                            ( left  = number) # DELETE THIS LINE - ELSE WILL RESET NUMBER AS PER ORIGINAL PROGRAM
+  write = left/100 
+  left  = left - write*100  
+  if write > 0
+    
+    hundreds  = englishNumber write
+    numString = numString + hundreds + ' hundred'
+  
+    if left > 0
+     
+      numString = numString + ' '
+    end
+  end
+
+  write = left/10
+  left  = left - write*10 
+  if write > 0
+    if ((write == 1) and (left > 0))
+   
+      numString = numString + teenagers[left-1]
+
+      left = 0
+    else
+      numString = numString + tensPlace[write-1]
+      
+    end
+
+    if left > 0
+  
+      numString = numString + '-'
+    end
+  end
+
+  write = left
+  left  = 0
+
+  if write > 0
+    numString = numString + onesPlace[write-1]
+  
+  end
+  numString
+end
+
+
+3) How about weddingNumber? It should work almost the same as englishNumber, except that it should insert the word "and" all over the
+place,returning things like 'nineteen hundred and seventy and two', or however wedding invitations are supposed to look.
+#adding    + ' and' to the end of each section of code (i.e after 'million', 'thousand' etc.) will put 'and' between each set of numbers e.g:
+...
+numString = numString + hundreds + ' hundred' + ' and'
+...
+so englishNumber (1345678) will return "one million and three hundred forty-five thousand six hundred seventy-eight"
+
+ALTERNATIVELY PUTTING 'AND' JUST AFTER THE 'hundred' RETURNS:
+"one million three hundred and forty-five thousand six hundred and seventy-eight" which looks much nicer...
+
+
+4) "Ninety-nine bottles of beer..." Using englishNumber and your old program, write out the lyrics to this song the right way this 
+time. Punish your computer: have it start at 9999. - still working on it
