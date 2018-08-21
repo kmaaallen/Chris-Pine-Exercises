@@ -5,7 +5,8 @@ https://pine.fm/LearnToProgram/chap_06.html
    #use a loop method
    number = 99
     while number > 0 do
-    puts "#{number} bottles of beer on the wall, #{number} bottles of beer. Take one down and pass it around, #{(number) -1} bottles of beer on the wall."
+    puts "#{number} bottles of beer on the wall, #{number} bottles of beer. Take one down and pass it around, #{(number) -1} 
+    bottles of beer on the wall."
     number = number - 1
    end
    
